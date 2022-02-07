@@ -1,0 +1,84 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: white;
+  padding: 0;
+  margin: 0;
+  background:url('imagenes/fodo.jpg') no-repeat center center;
+  background-size:cover;
+  background-position:  unset;
+  font-family: sans-serif; 
+}
+
+.main {
+
+  width: 100vw;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.titulo {
+  color: white ;
+  font-family: ;
+  font-size: 1;
+  padding: 40px;
+  width: 23vw;
+  margin: auto;
+  justify-content: center ;
+
+}
+
+.derechosAutor {
+  color: white;
+  padding: 0px;
+  width: 15vw;
+  margin: auto;
+  justify-content: legacy left;
+
+}
+
+.box {
+  padding: 10px;
+  margin: 0 20px 0 20px;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.2);
+  background-color: transparent ;
+  border: 2px solid #39FF14;
+  border-radius: 20px 20px;
+  width: 45vw;
+  height: auto;
+}
+
+.btn {
+  border: 0;
+  color: black;
+  font-weight: bold;
+  background-color: #23dc00;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 0.5em;
+}
+
+
+.text-input {
+  border-radius: 0.5em;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  display: block;
+  padding: 0.5em;
+  width: 100%;
+  height: 50px;
+}
+
+
+.Vector{ 
+position: absolute;
+left: 36.67%;
+right: 37.43%;
+top: 0%;
+bottom: 0%;
+background: forestgreen;
+}
