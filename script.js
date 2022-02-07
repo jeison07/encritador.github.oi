@@ -5,7 +5,7 @@ var button1 = document.getElementById("btn-encriptar");
 var button2 = document.getElementById("btn-desencriptar");	
 var buttonCopiar = document.getElementById("btn-copy");
 var encritacion = false;
-var codigo 
+var codigo = 0;
 
 = document.getElementById("input-texto").value;
 			
