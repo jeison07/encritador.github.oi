@@ -5,58 +5,48 @@ var button1 = document.getElementById("btn-encriptar");
 var button2 = document.getElementById("btn-desencriptar");	
 var buttonCopiar = document.getElementById("btn-copy");
 var encritacion = false;
-var codigo = 0;
 
-= document.getElementById("input-texto").value;
 			
 			
 function verificar(codigo){
-	var ok = false;
-	for(var i = 0; codigo.length; i++){
-		if(codigo[i].codePointAt(0)>=97 && codigo[i].codePointAt(0)<=122){
-			ok = true;
+	var validacion = /[^a-zñ\s]/g;
+		if(validacion.test(codigo)){
+			return "0";
 		}
 		else{ 
-			ok = false;
-			alert("el texto no debe tener: Numeros, Mayusculas ni caracteres especiales");	
-			break;
+			return "1";
+				
 		}	
-	}
-	return ok;	
+		
 	input1.focus();
-	event.preventDefault();		
+	
+
 }
-function encriptador(){
-	verificar(codigo);
-	if(input1.value != " "){
-		var encriptado = document.getElementById("input-texto").value;	
+function encriptador(codigo){
+
+	if(input1.value != " "){	
 		var chars = {"a":"ai", "e":"enter", "i":"imes", "o":"ober", "u":"ufat"};
-		encriptado = encriptado.replace(/[aeiou]/g, m => chars[m]);				
+		var encriptado = codigo.replace(/[aeiou]/g, m => chars[m]);	
+		return encriptado;			
 
 		input2.value = " ";	
 		input1.value = " ";	
 		input2.value = encriptado;
 		encritacion = true;	
+
 	}
 
-	else if(encritacion==false){
-		var encriptado = document.getElementById("msg").value;	
+	else if(encritacion==false){	
 		var chars = {"a":"ai", "e":"enter", "i":"imes", "o":"ober", "u":"ufat"};
-		encriptado = encriptado.replace(/[aeiou]/g, m => chars[m]);	
+		var encriptado = codigo.replace(/[aeiou]/g, m => chars[m]);	
+		return encriptado;
 	
 		input2.value = encriptado;
 		encritacion = true;		
 	}
-	else if(encriptado===encriptado.toUpperCase()){
-		alert("aaa");
-
-	}
-
-
-
 			
 	input1.focus();
-	event.preventDefault();
+	
 }
 
 			
@@ -92,7 +82,20 @@ function copiar(){
 
 				
 
-button1.onclick=encriptador;
+button1.addEventListener("click", function(event){
+	event.preventDefault();
+	var codigo = input1.value
+	var texto = verificar(codigo);
+	if(texto == "1"){
+		var encritar = encriptador(codigo);
+		input2.value = encritar;
+
+	}
+	else{ 
+			
+		alert("el texto no debe tener: Numeros, Mayusculas ni caracteres especiales");	
+	}
+})
 button2.onclick = desencriptador;
 buttonCopiar.onclick = copiar;
 
